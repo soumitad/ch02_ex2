@@ -25,7 +25,12 @@
     } else if ( $years > 30 ) {
         $error_message = 'Years must be less than 31.';
     // set error message to empty string if no invalid entries
-    } else {
+    }else if ( $interest_rate >= 15 ){ 
+        $error_message = 'Interest rate must be less than or equal to 15';
+
+   } 
+    else { 
+
         $error_message = ''; 
     }
 
@@ -68,5 +73,10 @@
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br>
     </main>
+    <div align="center" >
+    <?php
+    echo  "This calculation was done on " . date("Y/m/d") . "<br>";
+    ?></div>
 </body>
 </html>
+
